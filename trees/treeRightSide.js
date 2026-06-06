@@ -1,4 +1,4 @@
-const { Node, Tree } = require("./binaryTree");
+const { Node, Tree } = require("./binarySearchTree");
 
 const tree = new Tree();
 tree.insert(20);

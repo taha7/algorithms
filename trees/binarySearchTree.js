@@ -46,3 +46,11 @@ Tree.prototype.insert = function (val) {
   return this.root.insert(val);
 };
 
+/**
+ *
+ * @param {Array<any>} arr
+ */
+Tree.prototype.fromArray = function (arr) {
+  arr.forEach(this.insert.bind(this));
+};
+
