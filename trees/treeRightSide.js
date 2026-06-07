@@ -67,3 +67,27 @@ const treeRightSide = (root) => {
 
 console.log(treeRightSide(tree.root));
 
+
+const treeRightSide2 = (root) => {
+  const result = [];
+  const queue = [];
+
+  if (root != null) queue.push(root);
+
+  while (queue.length > 0) {
+    result.push(queue[queue.length - 1].value);
+    const levelSize = queue.length;
+    let counter = 0;
+    while (counter < levelSize) {
+      const currentNode = queue.shift();
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+      counter++;
+    }
+  }
+
+  return result;
+};
+
+console.log(treeRightSide2(tree.root));
+
