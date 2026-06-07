@@ -67,7 +67,6 @@ const treeRightSide = (root) => {
 
 console.log(treeRightSide(tree.root));
 
-
 const treeRightSide2 = (root) => {
   const result = [];
   const queue = [];
@@ -79,6 +78,7 @@ const treeRightSide2 = (root) => {
     const levelSize = queue.length;
     let counter = 0;
     while (counter < levelSize) {
+      //FIXME: find an alternative to shift => O(n)
       const currentNode = queue.shift();
       if (currentNode.left) queue.push(currentNode.left);
       if (currentNode.right) queue.push(currentNode.right);
